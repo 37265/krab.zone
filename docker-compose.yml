@@ -7,7 +7,6 @@ services:
       - ./app:/usr/share/nginx/html
     networks:
       - krab.zone
-    container_name: krab.zone
 
 networks:
   krab.zone:
