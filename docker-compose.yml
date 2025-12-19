@@ -1,0 +1,12 @@
+services:
+  krab.zone:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/usr/share/nginx/html
+    networks:
+      - "krab.zone"
+
+networks:
+  krab.zone: {}
