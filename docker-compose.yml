@@ -6,7 +6,10 @@ services:
     volumes:
       - ./app:/usr/share/nginx/html
     networks:
-      - "krab.zone"
+      - krab.zone
+    container_name: krab.zone
 
 networks:
-  krab.zone: {}
+  krab.zone:
+    name: krab_zone
+    driver: bridge
