@@ -1,14 +1,7 @@
 services:
   krab.zone:
-    image: nginx:latest
+    image: nginx
     ports:
-      - "80:80"
+      - "127.0.0.1:3002:80"
     volumes:
       - ./app:/usr/share/nginx/html
-    networks:
-      - krab.zone
-
-networks:
-  krab.zone:
-    name: krab_zone
-    driver: bridge
