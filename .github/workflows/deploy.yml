@@ -23,6 +23,9 @@ jobs:
         run: |
           ssh-add -l
 
+      - name: Test SSH Connection to GitHub
+        run: |
+          ssh -T git@github.com
 
       # SSH into Raspberry Pi and pull the latest changes
       - name: Deploy to Raspberry Pi
