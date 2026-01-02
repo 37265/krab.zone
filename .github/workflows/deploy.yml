@@ -1,0 +1,34 @@
+name: DEPLOY KRABS
+
+# Trigger the workflow on push or pull request events to the "main" branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull repository
+        uses: actions/checkout@v5
+
+      # Set up SSH agent and add SSH private key from GitHub secrets
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}  # This is your private SSH key stored in GitHub Secrets
+
+      - name: Check SSH agent
+        run: |
+          ssh-add -l
+
+      # SSH into Raspberry Pi and pull the latest changes
+      - name: Deploy to Raspberry Pi
+        run: |
+          ssh -o StrictHostKeyChecking=no frank@212.85.84.101 << 'EOF'
+            cd ~/Git/krab.zone ||  # Navigate to the folder where your site is deployed
+            git pull origin main ||  # Pull the latest changes
+            # Add any additional deployment commands (e.g., restart services, build the site, etc.)
+            echo "Deployment completed successfully!"
+          EOF
