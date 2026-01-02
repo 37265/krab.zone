@@ -27,8 +27,8 @@ jobs:
       - name: Deploy to Raspberry Pi
         run: |
           ssh -o StrictHostKeyChecking=no frank@212.85.84.101 << 'EOF'
-            cd ~/Git/krab.zone ||  # Navigate to the folder where your site is deployed
-            git pull origin main ||  # Pull the latest changes
+            cd ~/Git/krab.zone || exit 1 # Navigate to the folder where your site is deployed
+            git pull origin main || exit 1 # Pull the latest changes
             # Add any additional deployment commands (e.g., restart services, build the site, etc.)
             echo "Deployment completed successfully!"
           EOF
