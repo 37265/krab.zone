@@ -1,6 +1,5 @@
 name: shapoopie
 
-# Trigger the workflow on push or pull request events to the "main" branch
 on:
   push:
     branches:
@@ -13,13 +12,11 @@ jobs:
       - name: Pull repository
         uses: actions/checkout@v5
 
-      # Set up SSH agent and add SSH private key from GitHub secrets
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.5.3
         with:
-          ssh-private-key: ${{ secrets.SSH_KEY }}  # This is your private SSH key stored in GitHub Secrets
+          ssh-private-key: ${{ secrets.SSH_KEY }}
 
-      # SSH into Raspberry Pi and pull the latest changes
       - name: Deploy to Raspberry Pi
         run: |
           ssh -o StrictHostKeyChecking=no frank@krab.zone << 'EOF'
