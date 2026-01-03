@@ -26,8 +26,8 @@ jobs:
       # SSH into Raspberry Pi and pull the latest changes
       - name: Deploy to Raspberry Pi
         run: |
-          ssh -o StrictHostKeyChecking=no frank@212.85.84.101 << 'EOF'
+          ssh -o StrictHostKeyChecking=no frank@krab.zone << 'EOF'
             cd ~/Git/krab.zone
-            ls -al | echo
+            echo ls
             git pull origin main | echo
           EOF
