@@ -22,3 +22,12 @@ jobs:
       - name: Check SSH agent
         run: |
           ssh-add -l
+
+      # SSH into Raspberry Pi and pull the latest changes
+      - name: Deploy to Raspberry Pi
+        run: |
+          ssh -o StrictHostKeyChecking=no frank@212.85.84.101 << 'EOF'
+            cd ~/Git/krab.zone ||
+            ll ||
+            echo "SSH commands can be executed!"
+          EOF
