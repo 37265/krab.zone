@@ -24,6 +24,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no frank@krab.zone << 'EOF'
             cd ~/Git/krab.zone
+            eval "$(ssh-agent -s)"
             ssh-add ~/.ssh/github_deploy
             git pull origin main
           EOF
