@@ -19,14 +19,11 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}  # This is your private SSH key stored in GitHub Secrets
 
-      - name: Check SSH agent
-        run: |
-          ssh-add -l
-
       # SSH into Raspberry Pi and pull the latest changes
       - name: Deploy to Raspberry Pi
         run: |
           ssh -o StrictHostKeyChecking=no frank@krab.zone << 'EOF'
             cd ~/Git/krab.zone
-            ssh-agent bash -c 'ssh-add ~/.ssh/github_deploy; git pull origin main' | echo
+            ssh-add ~/.ssh/github_deploy
+            git pull origin main
           EOF
