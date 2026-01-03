@@ -28,6 +28,5 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no frank@krab.zone << 'EOF'
             cd ~/Git/krab.zone
-            echo ls
-            git pull origin main | echo
+            ssh-agent bash -c 'ssh-add ~/.ssh/github_deploy; git pull origin main' | echo
           EOF
