@@ -1,4 +1,4 @@
-name: shapoopie
+name: deploy
 
 on:
   push:
