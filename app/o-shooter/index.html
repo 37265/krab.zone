@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This Is The Best Shooter Ever</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <audio preload="auto" class="revolver-sound"><source src="revolver.mp3" type="audio/mp3"></audio>
+    <audio class="banjo-sound"><source src="banjo.mp3" type="audio/mp3"></audio>
+
+    <div class="game-container">
+        <div class="marquee-container">
+            <marquee class="target-row" behavior="scroll" direction="left" scrollamount="22">
+                <span class="target" data-points=500 >
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+                <span class="target" data-points=500 >
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+                <span class="target" data-points=500 >
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+                <span class="target" data-points=500 >
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+                <span class="target" data-points=500 >
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+            </marquee>
+            <marquee class="target-row" behavior="scroll" direction="right" scrollamount="15">
+                <span class="target" data-points=250>
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+                <span class="target" data-points=250>
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+                <span class="target" data-points=250>
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+                <span class="target" data-points=250>
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+                <span class="target" data-points=250>
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+            </marquee>
+            <marquee class="target-row" behavior="scroll" direction="left" scrollamount="7">
+                <span class="target" data-points=100>
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+                <span class="target" data-points=100>
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+                <span class="target" data-points=100>
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+                <span class="target" data-points=100>
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+                <span class="target" data-points=100>
+                    <img draggable="false" src="Target-PNG-HD.png" alt="">
+                </span>
+            </marquee>
+        </div>
+
+        <div class="scoreboard">
+            <span class="score">0</span>
+        </div>
+
+        <button class="reload-button">Reload</button>
+
+        <div class="ammo-container">
+            <div class="bullet bullet-5"></div>
+            <div class="bullet bullet-4"></div>
+            <div class="bullet bullet-3"></div>
+            <div class="bullet bullet-2"></div>
+            <div class="bullet bullet-1"></div>
+        </div>
+    </div>
+
+</body>
+</html>
