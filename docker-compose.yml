@@ -5,3 +5,4 @@ services:
       - "127.0.0.1:3002:80"
     volumes:
       - ./app:/usr/share/nginx/html
+    restart: unless-stopped
